@@ -1,8 +1,6 @@
 extends MarginContainer
 
 
-
-
 @onready var user = %User
 @onready var host = %Host
 @onready var join = %Join
