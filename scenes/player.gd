@@ -4,6 +4,8 @@ class_name Player
 var speed = 200
 var acceleration = 300
 
+@export var sound_scene = preload("res://scenes/sound_particles.tscn")
+@onready var player = $"."
 
 func _physics_process(delta: float)-> void:
 	
@@ -19,6 +21,7 @@ func _input(event: InputEvent)-> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("action"):
 			action.rpc()
+			spawn_sound()
 
 func setup(player_data: Statics.PlayerData):
 	name = str(player_data.id)
@@ -32,4 +35,11 @@ func action():
 func send_data(pos: Vector2):
 	global_position = pos
 	
-	
+func spawn_sound():
+	if !sound_scene:
+		return
+	var sound = sound_scene.instantiate()
+	add_child(sound)
+	print(player.global_position)
+	sound.global_position = player.global_position
+
