@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=4 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://cu5nvi7vldijl" path="res://scenes/player.tscn" id="2_dbc21"]
+[ext_resource type="PackedScene" uid="uid://c6jdo70nfx7ya" path="res://scenes/sound_particles.tscn" id="3_nee0h"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
@@ -16,3 +17,8 @@ position = Vector2(63, 62)
 
 [node name="Player B" type="Marker2D" parent="Node2D"]
 position = Vector2(813, 519)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../GPUParticles2D")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("3_nee0h")]

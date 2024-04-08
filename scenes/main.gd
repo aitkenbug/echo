@@ -14,6 +14,4 @@ func _ready() -> void:
 		if player_data.role == Statics.Role.ROLE_A:
 			player.global_position = player_a.global_position
 		if player_data.role == Statics.Role.ROLE_B:
-			player.global_position = player_b.global_position	
-		
-		
+			player.global_position = player_b.global_position

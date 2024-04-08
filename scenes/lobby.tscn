@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g2fmt")
 lobby_player_scene = ExtResource("2_060bj")
+metadata/_edit_horizontal_guides_ = [-41.0]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
