@@ -16,3 +16,9 @@ position = Vector2(63, 62)
 
 [node name="Player B" type="Marker2D" parent="Node2D"]
 position = Vector2(813, 519)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/echo_fragmento.tscn")
+spawn_path = NodePath("../Echo")
+
+[node name="Echo" type="Node2D" parent="."]

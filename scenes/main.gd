@@ -4,7 +4,7 @@ extends Node2D
 @onready var players: Node2D = $Players
 @onready var player_a = $"Node2D/Player A"
 @onready var player_b = $"Node2D/Player B"
-
+@onready var Echo: Node2D = $Echo
 
 func _ready() -> void:
 	for player_data in Game.players:
@@ -14,6 +14,14 @@ func _ready() -> void:
 		if player_data.role == Statics.Role.ROLE_A:
 			player.global_position = player_a.global_position
 		if player_data.role == Statics.Role.ROLE_B:
-			player.global_position = player_b.global_position	
+			player.global_position = player_b.global_position
+		
+		player.fired.connect(_on_player_fired)
+		
+
+
+func _on_player_fired(noise) -> void:
+	Echo.add_child(noise)
+	
 		
 		
