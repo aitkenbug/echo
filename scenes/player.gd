@@ -4,8 +4,10 @@ class_name Player
 var speed = 200
 var acceleration = 300
 
-@export var sound_scene: PackedScene
-@onready var player = $"."
+signal fired(echo)
+
+@export var echo_scene: PackedScene
+
 
 func _physics_process(delta: float)-> void:
 	
@@ -20,12 +22,18 @@ func _physics_process(delta: float)-> void:
 func _input(event: InputEvent)-> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("action"):
-			action.rpc()
-			spawn_sound.rpc_id(1)
+			noise.rpc_id(1)
 
 func setup(player_data: Statics.PlayerData):
 	name = str(player_data.id)
 	set_multiplayer_authority(player_data.id)
+	
+@rpc("call_local")
+func noise()-> void:
+	var echo_inst = echo_scene.instantiate()
+	echo_inst.global_rotation = 100
+	echo_inst.global_position = global_position
+	fired.emit(echo_inst)
 	
 @rpc("authority","call_local","reliable")
 func action():
@@ -35,10 +43,5 @@ func action():
 func send_data(pos: Vector2):
 	global_position = pos
 	
-@rpc("call_local")
-func spawn_sound():
-	if !sound_scene:
-		return
-	var sound = sound_scene.instantiate()
-	add_child(sound)
-	sound.global_position = player.global_position
+	
+	
