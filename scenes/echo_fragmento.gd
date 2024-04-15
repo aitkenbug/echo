@@ -14,9 +14,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var velocity = speed * transform.x
-	position += velocity * delta
 	if collision_cnt>1: 
-		position += velocity * delta * -1
+		position = position
+	else:
+		position += velocity * delta
 	tiempo += delta
 	if tiempo > lifetime:
 		self.queue_free()
