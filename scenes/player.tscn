@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu5nvi7vldijl"]
+[gd_scene load_steps=6 format=3 uid="uid://cu5nvi7vldijl"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_33v06"]
 [ext_resource type="Texture2D" uid="uid://tw8t38ns0seh" path="res://icon.svg" id="1_lwrcs"]
 [ext_resource type="PackedScene" uid="uid://ds8yidee0j4j8" path="res://scenes/echo_fragmento.tscn" id="2_6ote6"]
+[ext_resource type="PackedScene" uid="uid://dsyfuvacq6814" path="res://scenes/RaycastBullet.tscn" id="3_e6a5k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_egkxx"]
-size = Vector2(127, 129)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1c06"]
+size = Vector2(119, 121)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_33v06")
 echo_scene = ExtResource("2_6ote6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_egkxx")
+bullet_scene = ExtResource("3_e6a5k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 0.5)
 scale = Vector2(1, 1.00781)
 texture = ExtResource("1_lwrcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_t1c06")

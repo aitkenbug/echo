@@ -17,11 +17,15 @@ func _ready() -> void:
 			player.global_position = player_b.global_position
 		
 		player.fired.connect(_on_player_fired)
+		player.fired2.connect(_on_player_fired2)
 		
 
 
 func _on_player_fired(noise) -> void:
-	Echo.add_child(noise)
+	Echo.add_child(noise, true)
 	
+	
+func _on_player_fired2(bullet) -> void:
+	Echo.add_child(bullet, true)
 		
 		
