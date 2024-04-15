@@ -7,7 +7,9 @@ var acceleration = 300
 signal fired(echo)
 
 @export var echo_scene: PackedScene
-@export var bullet_scene: PackedScene
+
+#@export var bullet_scene: PackedScene
+
 @onready var player = $"."
 
 
@@ -25,7 +27,7 @@ func _input(event: InputEvent)-> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("action"):
 			noise.rpc_id(1)
-			bullet.rpc_id(1)
+			#bullet.rpc_id(1)
 
 func setup(player_data: Statics.PlayerData):
 	name = str(player_data.id)
@@ -40,14 +42,6 @@ func noise()-> void:
 		echo_inst.global_position = player.global_position
 		fired.emit(echo_inst)
 		
-@rpc("call_local")
-func bullet()-> void:
-	#var num_particles = 16
-	#for k in range(16):
-	var echo_inst = echo_scene.instantiate()
-	#echo_inst.global_rotation = k*2*PI/num_particles
-	echo_inst.global_position = player.global_position
-	fired.emit(echo_inst)
 	
 @rpc("authority","call_local","reliable")
 func action():
