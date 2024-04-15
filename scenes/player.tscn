@@ -5,17 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://ds8yidee0j4j8" path="res://scenes/echo_fragmento.tscn" id="2_6ote6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1c06"]
-size = Vector2(119, 121)
+size = Vector2(32, 31)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(-2, 1)
 script = ExtResource("1_33v06")
 echo_scene = ExtResource("2_6ote6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.5)
-scale = Vector2(1, 1.00781)
+position = Vector2(2, -0.499999)
+scale = Vector2(0.25, 0.242188)
 texture = ExtResource("1_lwrcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_t1c06")

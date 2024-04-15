@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=4 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://cu5nvi7vldijl" path="res://scenes/player.tscn" id="2_dbc21"]
-[ext_resource type="Texture2D" uid="uid://tw8t38ns0seh" path="res://icon.svg" id="3_rddgw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ggpm"]
+[ext_resource type="PackedScene" uid="uid://ci1mgtcmnocb5" path="res://scenes/mapa1v1.tscn" id="3_lt7pu"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
@@ -18,7 +16,7 @@ player_scene = ExtResource("2_dbc21")
 position = Vector2(63, 62)
 
 [node name="Player B" type="Marker2D" parent="Node2D"]
-position = Vector2(813, 519)
+position = Vector2(1087, 62)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/echo_fragmento.tscn")
@@ -26,16 +24,4 @@ spawn_path = NodePath("../Echo")
 
 [node name="Echo" type="Node2D" parent="."]
 
-[node name="Static body" type="StaticBody2D" parent="."]
-position = Vector2(457, 233)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Static body"]
-rotation = -3.14159
-scale = Vector2(4.39245, -22.103)
-shape = SubResource("RectangleShape2D_7ggpm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Static body/CollisionShape2D"]
-modulate = Color(0, 0, 0, 1)
-rotation = 3.14159
-scale = Vector2(0.154389, -0.155652)
-texture = ExtResource("3_rddgw")
+[node name="Node2D2" parent="." instance=ExtResource("3_lt7pu")]
