@@ -26,6 +26,7 @@ func _physics_process(delta: float)-> void:
 func _input(event: InputEvent)-> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("action"):
+			#Debug.log(multiplayer.get_unique_id())
 			noise.rpc_id(1)
 			#bullet.rpc_id(1)
 
@@ -35,6 +36,7 @@ func setup(player_data: Statics.PlayerData):
 	
 @rpc("call_local")
 func noise()-> void:
+	#Debug.log(multiplayer.get_unique_id())
 	var num_particles = 16
 	for k in range(16):
 		var echo_inst = echo_scene.instantiate()

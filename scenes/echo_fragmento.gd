@@ -25,7 +25,6 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D):
 	collision_cnt = collision_cnt+1
-	Debug.log(collision_cnt)
 	if collision_cnt>1:
 		if body is CharacterBody2D:
 			sprite_2d.modulate = Color.RED	

@@ -13,6 +13,7 @@ script = ExtResource("1_33v06")
 echo_scene = ExtResource("2_6ote6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(2, -0.499999)
 scale = Vector2(0.25, 0.242188)
 texture = ExtResource("1_lwrcs")
