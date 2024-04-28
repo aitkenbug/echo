@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://bq38h5w2j422x"]
+
+[ext_resource type="Script" path="res://scenes/sonido_visual.gd" id="1_1rwe3"]
+[ext_resource type="Texture2D" uid="uid://dgxc72g0rpnp1" path="res://Free Smoke Fx  Pixel 06.png" id="1_21xoa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf7qy"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hl7u"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usorn"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udslu"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5q2n"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxlsf"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im3ld"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqf0o"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbq2i"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwuy7"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odmj8"]
+atlas = ExtResource("1_21xoa")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8yui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf7qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hl7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usorn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udslu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5q2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxlsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im3ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqf0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbq2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwuy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odmj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SONIDO VISUAL" type="Node2D"]
+script = ExtResource("1_1rwe3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -2)
+sprite_frames = SubResource("SpriteFrames_h8yui")
+autoplay = "default"
+frame_progress = 0.642959
+speed_scale = 5.0

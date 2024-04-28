@@ -1,12 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
+
 var speed = 200
 var acceleration = 300
 
 signal fired(echo)
 
 @export var echo_scene: PackedScene
+
+@export var animation_scene: PackedScene
 
 #@export var bullet_scene: PackedScene
 
@@ -26,6 +29,8 @@ func _physics_process(delta: float)-> void:
 func _input(event: InputEvent)-> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("action"):
+			var echo_visu = animation_scene.instantiate()
+			add_child(echo_visu)
 			#Debug.log(multiplayer.get_unique_id())
 			noise.rpc_id(1)
 			#bullet.rpc_id(1)

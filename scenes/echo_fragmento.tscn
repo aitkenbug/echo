@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds8yidee0j4j8"]
+[gd_scene load_steps=4 format=3 uid="uid://ds8yidee0j4j8"]
 
 [ext_resource type="Script" path="res://scenes/echo_fragmento.gd" id="1_dwi6k"]
-[ext_resource type="Texture2D" uid="uid://tw8t38ns0seh" path="res://icon.svg" id="1_q26o7"]
+[ext_resource type="Texture2D" uid="uid://baq2n8m63lr5t" path="res://Pixel blanco.png" id="2_1iy28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vdti"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tm5d7"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
+radius = 3.0
 
 [node name="Echo fragmento" type="Area2D"]
 script = ExtResource("1_dwi6k")
@@ -17,8 +13,5 @@ script = ExtResource("1_dwi6k")
 shape = SubResource("CircleShape2D_3vdti")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_q26o7")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_tm5d7")
+scale = Vector2(0.205357, 0.205357)
+texture = ExtResource("2_1iy28")
