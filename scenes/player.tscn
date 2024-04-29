@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu5nvi7vldijl"]
+[gd_scene load_steps=4 format=3 uid="uid://cu5nvi7vldijl"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_33v06"]
-[ext_resource type="PackedScene" uid="uid://ds8yidee0j4j8" path="res://scenes/echo_fragmento.tscn" id="2_6ote6"]
 [ext_resource type="PackedScene" uid="uid://bq38h5w2j422x" path="res://scenes/sonido_visual.tscn" id="3_sertc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1c06"]
@@ -10,7 +9,6 @@ size = Vector2(32, 31)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-2, 1)
 script = ExtResource("1_33v06")
-echo_scene = ExtResource("2_6ote6")
 animation_scene = ExtResource("3_sertc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

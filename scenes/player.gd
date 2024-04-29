@@ -4,10 +4,9 @@ class_name Player
 
 var speed = 200
 var acceleration = 300
+var noise_signal = 0
+#signal fired(echo)
 
-signal fired(echo)
-
-@export var echo_scene: PackedScene
 
 @export var animation_scene: PackedScene
 
@@ -32,23 +31,16 @@ func _input(event: InputEvent)-> void:
 			var echo_visu = animation_scene.instantiate()
 			add_child(echo_visu)
 			#Debug.log(multiplayer.get_unique_id())
-			noise.rpc_id(1)
-			#bullet.rpc_id(1)
+			noise.rpc()
 
 func setup(player_data: Statics.PlayerData):
 	name = str(player_data.id)
 	set_multiplayer_authority(player_data.id)
 	
-@rpc("call_local")
+
+@rpc("authority","call_local","reliable")
 func noise()-> void:
-	#Debug.log(multiplayer.get_unique_id())
-	var num_particles = 16
-	for k in range(16):
-		var echo_inst = echo_scene.instantiate()
-		echo_inst.global_rotation = k*2*PI/num_particles
-		echo_inst.global_position = player.global_position
-		fired.emit(echo_inst)
-		
+	noise_signal = 1
 	
 @rpc("authority","call_local","reliable")
 func action():

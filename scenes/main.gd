@@ -6,6 +6,9 @@ extends Node2D
 @onready var player_b = $"Node2D/Player B"
 @onready var Echo: Node2D = $Echo
 
+@export var echo_scene: PackedScene
+
+
 func _ready() -> void:
 	for player_data in Game.players:
 		var player = player_scene.instantiate()
@@ -16,14 +19,17 @@ func _ready() -> void:
 		if player_data.role == Statics.Role.ROLE_B:
 			player.global_position = player_b.global_position
 		
-		player.fired.connect(_on_player_fired)
-		#player.fired2.connect(_on_player_fired2)
-		
+	for player in players.get_children():
+		Debug.log(player.name)
 
+var num_particles = 16
 
-func _on_player_fired(noise) -> void:
-	Echo.add_child(noise, true)
-	
-	
-		
-		
+func _physics_process(delta):
+	for player in players.get_children():
+		if player.noise_signal==1:
+			player.noise_signal = 0
+			for k in range(num_particles):
+				var echo_inst = echo_scene.instantiate()
+				echo_inst.global_rotation = k*2*PI/num_particles
+				echo_inst.global_position = player.global_position
+				Echo.add_child(echo_inst, true)
