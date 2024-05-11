@@ -22,7 +22,7 @@ scale = Vector2(2.89349, 2.89349)
 position = Vector2(172, 134)
 
 [node name="Player B" type="Marker2D" parent="Node2D"]
-position = Vector2(3167, 175)
+position = Vector2(315, 229)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/echo_fragmento.tscn")

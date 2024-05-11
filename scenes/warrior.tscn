@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwttsaf56ygn2"]
+
+[ext_resource type="Script" path="res://Warrior.gd" id="1_ggg3g"]
+[ext_resource type="Texture2D" uid="uid://tw8t38ns0seh" path="res://icon.svg" id="2_d3xa3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi338"]
+size = Vector2(32, 31)
+
+[node name="Warrior" type="CharacterBody2D"]
+script = ExtResource("1_ggg3g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.234375)
+texture = ExtResource("2_d3xa3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wi338")
