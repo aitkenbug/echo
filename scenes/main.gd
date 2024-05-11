@@ -19,8 +19,8 @@ func _ready() -> void:
 		if player_data.role == Statics.Role.ROLE_B:
 			player.global_position = player_b.global_position
 		
-	for player in players.get_children():
-		Debug.log(player.name)
+	#for player in players.get_children():
+		#Debug.log(player.name)
 
 var num_particles = 16
 

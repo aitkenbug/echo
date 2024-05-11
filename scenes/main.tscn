@@ -12,6 +12,7 @@ player_scene = ExtResource("2_dbc21")
 echo_scene = ExtResource("3_t8nbj")
 
 [node name="Black" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(572.5, 326.5)
 scale = Vector2(3.69527, 2.1568)
 texture = ExtResource("3_nbp03")
