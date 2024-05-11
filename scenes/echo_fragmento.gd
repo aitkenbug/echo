@@ -28,11 +28,11 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D):
 	collision_cnt = collision_cnt+1
 	if collision_cnt==2 and body is CharacterBody2D:
-		Debug.log("Tocó un jugador")
+		#Debug.log("Tocó un jugador")
 		sprite_2d.modulate = Color.RED	
 	elif collision_cnt>1:
 		wall_touch = 1
-		Debug.log("Tocó una pared")
+		#Debug.log("Tocó una pared")
 		
 	#if collision_cnt>1:
 		#Debug.log(speed * transform.x)

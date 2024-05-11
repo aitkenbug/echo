@@ -11,26 +11,27 @@ script = ExtResource("1_ysfbh")
 player_scene = ExtResource("2_dbc21")
 echo_scene = ExtResource("3_t8nbj")
 
-[node name="Black" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(572.5, 326.5)
-scale = Vector2(3.69527, 2.1568)
-texture = ExtResource("3_nbp03")
+[node name="Node2D2" parent="." instance=ExtResource("3_lt7pu")]
+scale = Vector2(2.89349, 2.89349)
 
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Player A" type="Marker2D" parent="Node2D"]
-position = Vector2(63, 62)
+position = Vector2(172, 134)
 
 [node name="Player B" type="Marker2D" parent="Node2D"]
-position = Vector2(1087, 62)
+position = Vector2(3167, 175)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/echo_fragmento.tscn")
 spawn_path = NodePath("../Echo")
 
-[node name="Echo" type="Node2D" parent="."]
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(572.5, 326.5)
+rotation = 3.14159
+scale = Vector2(364.669, 212.844)
+texture = ExtResource("3_nbp03")
 
-[node name="Node2D2" parent="." instance=ExtResource("3_lt7pu")]
+[node name="Echo" type="Node2D" parent="."]
